@@ -236,14 +236,14 @@ section {
 }
 
 .home .btn {
-  position: relative;
+  position: absolute;
   display: inline-block;
   text-decoration: none;
   color: white;
   background: var(--second-font);
   padding: 10px 30px;
   letter-spacing: 1px;
-  top: 80px;
+  bottom: 350px;
   opacity: 0;
   -webkit-transform: translateY(3rem);
           transform: translateY(3rem);
