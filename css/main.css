@@ -26,6 +26,7 @@ body {
           box-sizing: border-box;
   font-family: 'Poppins';
   overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 .container {
@@ -70,6 +71,7 @@ body {
   color: var(--second-font);
   font-size: 1.2em;
   letter-spacing: .8px;
+  text-decoration: none;
 }
 
 .container .main .header .hamburger-menu:hover {
