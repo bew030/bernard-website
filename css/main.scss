@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-font: black; 
+    --second-font: #5d5d5d;
+    --tertiary-font: #d2d2d2;
+    --bg-color: hsl(49 37% 94%);
+    --typewriterSpeed: 1s;
+    --typewriterCharacters: 26;
+}
+
+/* 
+* {
+    border-color: green; // for reference, delete
+    border-width: 1px; // for reference, delete
+    border-style: solid; // for reference, delete
+}
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~ navigation bar, top bar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+body {
+    margin: 0;
+    padding: 0;
+    // box-sizing: border-box;
+    font-family: 'Poppins';
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%; // is this necessary?
+    position: relative;
+    // height: 100px;
+    .main {
+        position: absolute; 
+        width: calc(100% - 300px);
+        min-height: 100vh;
+        transition: width .5s;
+        // background-color: red;
+        .header {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: calc(100% - 301px);
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            display: flex;
+            place-content: space-between;
+            box-sizing: border-box;
+            padding: 0px 30px;
+            height: 60px;
+            align-items: center;
+            z-index: 999;
+            transition: width .5s;
+
+            background-color: white;
+            .logo {
+                text-transform: uppercase;
+                font-weight: bold;
+                color: var(--second-font);
+                font-size: 1.2em;
+                letter-spacing: .8px;
+            }
+            .hamburger-menu {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .navigation {
+        border-left: 1px solid rgba(0,0,0,.05); // for reference, delete
+        position: fixed;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        right: 0px;
+        width: 300px;
+        height: 100%;
+        text-align: right;
+        overflow: hidden;
+        transition: width 0.5s;
+        z-index: 999;
+        ul { 
+            position: relative;
+            top: 0;
+            display: block;
+            // display: flex;
+            width: 100%;
+            // height: 50%;
+            right: 0;
+            padding: 20px 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--second-font);
+            li {
+                list-style-type: none;
+                width: 100%;
+                position: relative;
+                padding: 1.5em 0em;       
+                &:hover {
+                    font-weight: bold;
+                }
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+.main.active {
+    width: 100%;
+}
+
+.main .header.active {
+    width: 100%;
+    // transition: width .5s;
+}
+
+.navigation.active {
+    width: 0;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~ navigation bar, top bar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+section {
+    position: relative; 
+    min-height: 100vh;
+}
+
+.home {
+    display: flex;
+    // border: black 1px solid;
+    // justify-content: center;
+    padding-top: 200px;
+    align-items: center;
+    flex-direction: column;
+    
+    .content {
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        // border: black 1px solid;
+        justify-content: space-evenly;
+        //height: 500px;
+        width: 100%;
+
+        // border: green 1px solid; 
+        
+        .text {
+            // font-size: 2vh;
+            font-size: 2em;
+            position: relative;
+            text-align: right;
+            // border: black 1px solid;
+            h1 {
+                position: relative; 
+                &:before, &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                // unveiling animation 
+                &:before { 
+                    background: white;
+                    animation: typewriter var(--typewriterSpeed)
+                      steps(var(--typewriterCharacters)) 1s forwards;
+                }
+
+                // blinking cursor animation 
+                &:after { 
+                    width: 0.125em;
+                    background: black;
+                    animation:  typewriter var(--typewriterSpeed)
+                    steps(var(--typewriterCharacters)) 1s forwards,
+                    blink 1s steps(var(--typewriterCharacters)) infinite;
+                }
+            }
+            p {
+                color: var(--second-font);
+                opacity: 0;
+                transform: translateY(3rem);
+                animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1.3s) forwards;
+            }
+        }
+        .image {
+            position: flex;
+            align-items: center;
+            justify-content: center;
+            .profile-img {
+                max-width: 500px;
+                height: 500px;
+                object-fit: cover;
+                overflow: hidden;
+                border-radius: 50%;
+                margin-bottom: 20px;
+            }
+            opacity: 0;
+            transform: translateX(1.5rem);
+            animation: fadeInLeft 2s ease var(--typewriterSpeed) forwards;
+        }
+        
+    } 
+    .btn {
+        position: relative;
+        display: inline-block;
+
+        text-decoration: none;
+        color: white;
+        background: var(--second-font);
+        padding: 10px 30px;
+        letter-spacing: 1px;
+        top: 80px;
+
+        opacity: 0;
+        transform: translateY(3rem);
+        animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1.8s) forwards;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--primary-font);
+        }
+        
+    }
+
+    .social-media {
+        // list-style-type: none;
+        position: absolute; 
+        bottom: 250px;
+        display: flex; 
+
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+        place-content: space-between;
+        // border: black 1px solid;
+        position: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        opacity: 0;
+        transform: translateY(1.5rem);
+        animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2.1s) forwards;
+
+        a {
+            // border: black 1px solid;
+            display: flex; 
+            margin: 0px 50px;
+            img {
+                background: var(--tertiary-font);
+                // border: black 1px solid;
+                padding: 10px;
+                margin: 10px;
+                height: 40px;
+                width: 40px;
+
+                &:hover {
+                    background-color: var(--second-font);
+                }
+            }
+        }
+
+    }
+
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+  
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+  
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.about {
+    position: relative;
+    min-height: 100vh;
+    padding: 0px 40px;
+    padding-top: 50px;
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+    .about-me-text {
+        color: var(--second-font);
+    }
+}
+
+.technologies {
+    position: relative;
+    min-height: 100vh;
+    padding: 0px 40px;
+    padding-top: 50px;
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+    .about-me-text {
+        color: var(--second-font);
+    }
+}
+
+.projects {
+    position: relative;
+    min-height: 100vh;
+    padding: 0px 40px;
+    padding-top: 50px;
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+    .about-me-text {
+        color: var(--second-font);
+    }
+}
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 0px 40px;
+    padding-top: 50px;
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+    .about-me-text {
+        color: var(--second-font);
+    }
+}
