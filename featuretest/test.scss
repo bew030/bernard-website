@@ -1,0 +1,175 @@
+* {
+    
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+.container-form {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: black 2px solid;
+    .form {
+        display: grid; // grid if you don't want boxes to change shape based off of inside material 
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        height: 600px;
+
+        border-radius: 20px;
+        // background-color: white;
+        z-index: 99999;
+        // outline: black 2px solid;
+        box-shadow: 0 0 20px 1px rgba(0,0,0,.3);
+        overflow: hidden; 
+        .left {
+            // background: blue;
+        }
+        .right {
+            border: black 2px solid;
+            background: blue;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute; 
+                width: 40px;
+                height: 40px;
+                transform: rotate(45deg);
+                top: 70px;
+                left: -20px;
+                background-color: blue; // red;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            form {
+                border: black 2px solid;
+                position: relative;
+                width: 90%;
+                height: 90%;
+                color: white;
+                padding: 0px 20px;
+                h1 {
+                    margin-bottom: 10px;
+                    margin-top: 10px;
+                }
+                .form-group {
+                    padding: 8px;
+                    
+                    label {
+                        // display: none;
+                        position: absolute;
+                        left: 50px;
+                        transform: translateY(70%);
+                        pointer-events: none;
+                        transition: .5s;
+                    }
+                    span {
+                        position: absolute;
+                        left: 60px;
+                        transform: translateY(-50%);
+                        font-size: 1em;
+                        color: transparent;
+                        pointer-events: none;
+                        // background-color: red;
+
+                        &:before, &:after   {
+                            content: "";
+                            position: absolute; 
+                            // width: 50%;
+                            width: 10%; 
+                            opacity: 0; 
+                            transition: .5s;
+                            height: 3px;
+                            background-color: blue;
+                            top: 60%;
+                            transform: translateY(-50%);
+                        }
+
+                        &:before {
+                            left: 50%;
+                        }
+                        &:after {
+                            right: 50%;
+                        }
+                    }
+                }
+                .focus {
+                    label {
+                        position: absolute;
+                        left: 60px;
+                        transform: translateY(-50%);
+                        font-size: 1em;
+                        pointer-events: none;
+                        z-index: 999;
+                    }
+                    span {
+                        &:before, &:after {
+                            width: 70%;
+                            opacity: 1;
+                        }
+                    }
+                }
+                input, textarea {
+                    width: 100%;
+                    border-radius: 20px;
+                    background: transparent;
+                    color: white;
+                    border: white 2px solid;
+                    padding: 20px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                input {       
+                    height: 40px;
+                    &:-webkit-autofill { 
+                        -webkit-background-clip: text;
+                        color: white;
+                    }
+                }
+                textarea {
+                    resize: none;
+                    overflow-y: auto;
+                    height: 160px;
+                }
+                
+                button {
+                    margin-left: 10px;
+                    color: blue;
+                    padding: 8px 20px;
+                    border-radius: 20px;
+                    border: white 2px solid;
+                    background-color: white;
+                    transition: .3s;
+                    &:hover {
+                        background: transparent;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+

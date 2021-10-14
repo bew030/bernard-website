@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="container-form">
+        <div class="form">
+            <div class="left">
+            </div>
+            <div class="right">
+                <span class="circle one"></span>
+                <span class="circle two"></span>
+                <form action = "">
+                    <h1>Contact Me</h1>
+                    <div class="form-group">
+                        <input type = "text" id = "name" name = "name" autocomplete="filler"></input>
+                        <label for = "">Name</label>
+                        <span>Name</span>
+                    </div>
+                    <div class="form-group">
+                        <input type = "text" id = "email" name = "email" autocomplete="filler2"></input>
+                        <label for = "">Email</label>
+                        <span>Email</span>
+                    </div>
+                    <div class="form-group">
+                        <input type = "text" id = "subject" name = "subject" ></input>
+                        <label for = "">Subject</label>
+                        <span>Subject</span>
+                    </div>
+                    <div class="form-group">
+                        <textarea type = "text" id = "message" name = "message"  ></textarea>
+                        <label for = "">Message</label>
+                        <span>Message</span>
+                    </div>
+        
+                    <button type = "submit">Submit</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const inputs = document.querySelectorAll('input,textarea');
+
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('focusin', (event) => {
+            let prent = inputs[i].parentNode;
+            prent.classList.add("focus");
+        })
+        inputs[i].addEventListener('focusout', (event) => {
+            if(inputs[i].value == "") {
+                let prent = inputs[i].parentNode;
+                prent.classList.remove("focus");
+            }
+        })
+    }
+</script>
+</html>

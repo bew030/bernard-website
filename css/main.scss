@@ -25,7 +25,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    // box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Poppins';
     overflow-x: hidden;
 }
@@ -214,6 +214,7 @@ section {
         display: inline-block;
 
         text-decoration: none;
+        border-radius: 7px;
         color: white;
         background: var(--second-font);
         padding: 10px 30px;
@@ -257,6 +258,7 @@ section {
             margin: 0px 50px;
             img {
                 background: var(--tertiary-font);
+                border-radius: 7px;
                 // border: black 1px solid;
                 padding: 10px;
                 margin: 10px;
@@ -362,4 +364,261 @@ section {
     .about-me-text {
         color: var(--second-font);
     }
+}
+
+
+
+
+.container-form {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form {
+        display: grid; // grid if you don't want boxes to change shape based off of inside material 
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        height: 700px;
+
+        border-radius: 20px;
+        // background-color: white;
+        z-index: 99999;
+        box-shadow: 0 0 20px 1px rgba(0,0,0,.3);
+        overflow: hidden; 
+
+        .left {
+            
+            position: relative;
+            display: grid; 
+            grid-template-columns: repeat(1fr, 3);
+            padding: 20px 30px;
+            h1 {
+                font-size: 3em;
+                text-align: left;
+                margin-bottom: 0;
+                
+            }
+            p {
+                margin-top: 40px;
+                font-size: 1.5em;
+                margin-bottom: 0;
+                height: 300px;
+            }
+            .basic-contact {
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                // align-items: center;
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                font-size: 1.2em;
+                color: var(--second-font)
+            }
+            /*
+            .footer {
+                margin-top: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border: black 1px solid;
+                place-content: space-between;
+                img {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+            */
+        }
+
+/*
+.social-media {
+        // list-style-type: none;
+        position: absolute; 
+        bottom: 250px;
+        display: flex; 
+
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+        place-content: space-between;
+        // border: black 1px solid;
+        position: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        opacity: 0;
+        transform: translateY(1.5rem);
+        animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2.1s) forwards;
+
+        a {
+            // border: black 1px solid;
+            display: flex; 
+            margin: 0px 50px;
+            img {
+                background: var(--tertiary-font);
+                border-radius: 7px;
+                // border: black 1px solid;
+                padding: 10px;
+                margin: 10px;
+                height: 40px;
+                width: 40px;
+
+                &:hover {
+                    background-color: var(--second-font);
+                }
+            }
+        }
+
+    }
+*/
+
+
+
+        .right {
+            background: var(--second-font);
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute; 
+                width: 40px;
+                height: 40px;
+                transform: rotate(45deg);
+                top: 70px;
+                left: -20px;
+                background-color: var(--second-font); // red;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            form {
+                position: relative;
+                width: 90%;
+                height: 90%;
+                color: white;
+                padding: 0px 20px;
+
+                .focus {
+                    label {
+                        position: absolute;
+                        left: 55px;
+                        transform: translateY(-50%);
+                        font-size: 1.1em;
+                        pointer-events: none;
+                        z-index: 999;
+                    }
+                    span {
+                        &:before, &:after {
+                            width: 70%;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                h1 {
+                    margin-bottom: 30px;
+                    margin-top: -5px;
+                    font-size: 1.8em;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                label {
+                    // display: none;
+                    position: absolute;
+                    left: 42px;
+                    transform: translateY(30%);
+                    pointer-events: none;
+                    transition: .5s;
+                }
+                span {
+                    position: absolute;
+                    left: 55px;
+                    transform: translateY(-50%);
+                    font-size: 1.1em;
+ 
+                    pointer-events: none;
+                    color: transparent;
+                    &:before, &:after   {
+                        content: "";
+                        position: absolute; 
+                        // width: 50%;
+                        width: 10%; 
+                        opacity: 0; 
+                        transition: .5s;
+                        height: 6px;
+                        background-color: var(--second-font);
+                        top: 60%;
+                        transform: translateY(-50%);
+                    }
+                    &:before {
+                        left: 50%;
+                    }
+                    &:after {
+                        right: 50%;
+                    }
+                }
+
+                .form-group {
+                    width: 100%;
+                    // border: black 2px solid;
+                    margin: 20px 0px;
+                    
+                    input, textarea {
+                        box-sizing: border-box;
+                        width: 99%;
+                        border-radius: 20px;
+                        background: transparent;
+                        color: white;
+                        border: white 2px solid;
+                        padding: 10px 20px;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    input {
+                        height: 40px;
+                    }
+                    textarea {
+                        resize: none;
+                        overflow-y: auto;
+                        height: 160px;
+                    }
+                    
+                }
+
+                button {
+                    color: var(--second-font);
+                    padding: 10px 40px;
+                    font-size: larger;
+                    border-radius: 20px;
+                    border: white 2px solid;
+                    
+                    background-color: white;
+                    transition: .3s;
+                    &:hover {
+                        background: transparent;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
 }

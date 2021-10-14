@@ -22,6 +22,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Poppins';
   overflow-x: hidden;
 }
@@ -239,6 +241,7 @@ section {
   position: absolute;
   display: inline-block;
   text-decoration: none;
+  border-radius: 7px;
   color: white;
   background: var(--second-font);
   padding: 10px 30px;
@@ -289,6 +292,7 @@ section {
 
 .home .social-media a img {
   background: var(--tertiary-font);
+  border-radius: 7px;
   padding: 10px;
   margin: 10px;
   height: 40px;
@@ -425,5 +429,291 @@ section {
 
 .contact .about-me-text {
   color: var(--second-font);
+}
+
+.container-form {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-form .form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  height: 700px;
+  border-radius: 20px;
+  z-index: 99999;
+  -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  /*
+.social-media {
+        // list-style-type: none;
+        position: absolute; 
+        bottom: 250px;
+        display: flex; 
+
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+        place-content: space-between;
+        // border: black 1px solid;
+        position: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        opacity: 0;
+        transform: translateY(1.5rem);
+        animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2.1s) forwards;
+
+        a {
+            // border: black 1px solid;
+            display: flex; 
+            margin: 0px 50px;
+            img {
+                background: var(--tertiary-font);
+                border-radius: 7px;
+                // border: black 1px solid;
+                padding: 10px;
+                margin: 10px;
+                height: 40px;
+                width: 40px;
+
+                &:hover {
+                    background-color: var(--second-font);
+                }
+            }
+        }
+
+    }
+*/
+}
+
+.container-form .form .left {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (3)[1fr];
+      grid-template-columns: repeat(1fr, 3);
+  padding: 20px 30px;
+  /*
+            .footer {
+                margin-top: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border: black 1px solid;
+                place-content: space-between;
+                img {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+            */
+}
+
+.container-form .form .left h1 {
+  font-size: 3em;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.container-form .form .left p {
+  margin-top: 40px;
+  font-size: 1.5em;
+  margin-bottom: 0;
+  height: 300px;
+}
+
+.container-form .form .left .basic-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-size: 1.2em;
+  color: var(--second-font);
+}
+
+.container-form .form .right {
+  background: var(--second-font);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-form .form .right:before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 70px;
+  left: -20px;
+  background-color: var(--second-font);
+}
+
+.container-form .form .right form {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  color: white;
+  padding: 0px 20px;
+}
+
+.container-form .form .right form .focus label {
+  position: absolute;
+  left: 55px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.1em;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.container-form .form .right form .focus span:before, .container-form .form .right form .focus span:after {
+  width: 70%;
+  opacity: 1;
+}
+
+.container-form .form .right form h1 {
+  margin-bottom: 30px;
+  margin-top: -5px;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.container-form .form .right form label {
+  position: absolute;
+  left: 42px;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  pointer-events: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.container-form .form .right form span {
+  position: absolute;
+  left: 55px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.1em;
+  pointer-events: none;
+  color: transparent;
+}
+
+.container-form .form .right form span:before, .container-form .form .right form span:after {
+  content: "";
+  position: absolute;
+  width: 10%;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  height: 6px;
+  background-color: var(--second-font);
+  top: 60%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container-form .form .right form span:before {
+  left: 50%;
+}
+
+.container-form .form .right form span:after {
+  right: 50%;
+}
+
+.container-form .form .right form .form-group {
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.container-form .form .right form .form-group input, .container-form .form .right form .form-group textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 99%;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  border: white 2px solid;
+  padding: 10px 20px;
+}
+
+.container-form .form .right form .form-group input:focus, .container-form .form .right form .form-group textarea:focus {
+  outline: none;
+}
+
+.container-form .form .right form .form-group input {
+  height: 40px;
+}
+
+.container-form .form .right form .form-group textarea {
+  resize: none;
+  overflow-y: auto;
+  height: 160px;
+}
+
+.container-form .form .right form button {
+  color: var(--second-font);
+  padding: 10px 40px;
+  font-size: larger;
+  border-radius: 20px;
+  border: white 2px solid;
+  background-color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container-form .form .right form button:hover {
+  background: transparent;
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }
 /*# sourceMappingURL=main.css.map */

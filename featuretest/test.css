@@ -1,0 +1,198 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.container-form {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-form .form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  height: 600px;
+  border-radius: 20px;
+  z-index: 99999;
+  -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.container-form .form .right {
+  border: black 2px solid;
+  background: blue;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-form .form .right:before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 70px;
+  left: -20px;
+  background-color: blue;
+}
+
+.container-form .form .right form {
+  border: black 2px solid;
+  position: relative;
+  width: 90%;
+  height: 90%;
+  color: white;
+  padding: 0px 20px;
+}
+
+.container-form .form .right form h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.container-form .form .right form .form-group {
+  padding: 8px;
+}
+
+.container-form .form .right form .form-group label {
+  position: absolute;
+  left: 50px;
+  -webkit-transform: translateY(70%);
+          transform: translateY(70%);
+  pointer-events: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.container-form .form .right form .form-group span {
+  position: absolute;
+  left: 60px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1em;
+  color: transparent;
+  pointer-events: none;
+}
+
+.container-form .form .right form .form-group span:before, .container-form .form .right form .form-group span:after {
+  content: "";
+  position: absolute;
+  width: 10%;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  height: 3px;
+  background-color: blue;
+  top: 60%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container-form .form .right form .form-group span:before {
+  left: 50%;
+}
+
+.container-form .form .right form .form-group span:after {
+  right: 50%;
+}
+
+.container-form .form .right form .focus label {
+  position: absolute;
+  left: 60px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1em;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.container-form .form .right form .focus span:before, .container-form .form .right form .focus span:after {
+  width: 70%;
+  opacity: 1;
+}
+
+.container-form .form .right form input, .container-form .form .right form textarea {
+  width: 100%;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  border: white 2px solid;
+  padding: 20px;
+}
+
+.container-form .form .right form input:focus, .container-form .form .right form textarea:focus {
+  outline: none;
+}
+
+.container-form .form .right form input {
+  height: 40px;
+}
+
+.container-form .form .right form input:-webkit-autofill {
+  -webkit-background-clip: text;
+  color: white;
+}
+
+.container-form .form .right form textarea {
+  resize: none;
+  overflow-y: auto;
+  height: 160px;
+}
+
+.container-form .form .right form button {
+  margin-left: 10px;
+  color: blue;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: white 2px solid;
+  background-color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container-form .form .right form button:hover {
+  background: transparent;
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+/*# sourceMappingURL=test.css.map */
